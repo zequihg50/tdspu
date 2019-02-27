@@ -14,7 +14,9 @@ class Dataset(object):
     # Write this dataset to a ncml file with name 'name' in path 'dest'
     def ncml(self, name, dest, template='dataset.ncml.j2'):
         def get_files(path):
-            files = [os.path.join(path,f) for f in os.listdir(path)]
+            files = []
+            for dirpath, dirnames, filenames in os.walk(path):
+                files.extend([os.path.join(path, dirpath, f) for f in filenames])
             files.sort()
             return files
 
@@ -30,7 +32,7 @@ class Dataset(object):
 
         for path in get_files(self.root):
             file = os.path.basename(path)
-            var = file.split("_")[0]
+            var = '_'.join(file.split("_"))[0:2] # a variable is identified by (name,realm)
 
             dataset = netCDF4.Dataset(path)
             taggs[var].append( (path, get_ncoords(dataset)) )
@@ -45,9 +47,9 @@ class Dataset(object):
 
 if __name__ == '__main__':
     def get_directories(root):
-        for dirpaths, dirnames, filenames in os.walk(root):
+        for dirpath, dirnames, filenames in os.walk(root):
             if not dirnames:
-                yield dirpaths
+                yield os.path.split(dirpath)[0] # ignore versions
 
     root = sys.argv[1]
     dest = os.path.join(os.path.dirname(__file__), 'ncmls')
