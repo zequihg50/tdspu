@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<aggregation type="union">
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/huss_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/pr_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/prsn_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/psl_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/sfcWind_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_210101-210512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_210601-211012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_211101-211512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_211601-212012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_212101-212512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_212601-213012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_213101-213512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_213601-214012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_214101-214512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_214601-215012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_215101-215512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_215601-216012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_216101-216512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_216601-217012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_217101-217512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_217601-218012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_218101-218512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_218601-219012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_219101-219512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tas_Amon_GFDL-ESM2M_rcp45_r1i1p1_219601-220012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmax_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/tasmin_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/uas_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_200601-201012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_201101-201512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_201601-202012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_202101-202512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_202601-203012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_203101-203512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_203601-204012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_204101-204512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_204601-205012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_205101-205512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_205601-206012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_206101-206512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_206601-207012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_207101-207512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_207601-208012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_208101-208512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_208601-209012.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_209101-209512.nc" ncoords="60" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/rcp45/mon/atmos/Amon/r1i1p1/v20111228/vas_Amon_GFDL-ESM2M_rcp45_r1i1p1_209601-210012.nc" ncoords="60" />
+	
+	</aggregation>
+</netcdf>
+
+</aggregation>
+</netcdf>

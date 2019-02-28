@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<aggregation type="union">
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/MOHC/HadGEM2-ES/rcp85/mon/seaIce/OImon/r1i1p1/v20111218/prsn_OImon_HadGEM2-ES_rcp85_r1i1p1_200512-209912.nc" ncoords="1129" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/MOHC/HadGEM2-ES/rcp85/mon/seaIce/OImon/r1i1p1/v20111218/prsn_OImon_HadGEM2-ES_rcp85_r1i1p1_209912-219911.nc" ncoords="1200" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/MOHC/HadGEM2-ES/rcp85/mon/seaIce/OImon/r1i1p1/v20111218/prsn_OImon_HadGEM2-ES_rcp85_r1i1p1_219912-229911.nc" ncoords="1200" />
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/MOHC/HadGEM2-ES/rcp85/mon/seaIce/OImon/r1i1p1/v20111218/prsn_OImon_HadGEM2-ES_rcp85_r1i1p1_229912-229912.nc" ncoords="1" />
+	
+	</aggregation>
+</netcdf>
+
+</aggregation>
+</netcdf>

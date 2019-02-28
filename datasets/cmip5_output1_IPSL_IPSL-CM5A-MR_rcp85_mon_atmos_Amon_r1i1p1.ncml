@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<aggregation type="union">
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/huss_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/pr_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/prsn_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/psl_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/sfcWind_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/tas_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/tasmax_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/tasmin_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/uas_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+<netcdf>
+	<aggregation type="joinExisting" dimName="time">
+	
+		<netcdf location="/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset-mon/data/cmip5/output1/IPSL/IPSL-CM5A-MR/rcp85/mon/atmos/Amon/r1i1p1/v20111119/vas_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc" ncoords="1140" />
+	
+	</aggregation>
+</netcdf>
+
+</aggregation>
+</netcdf>
