@@ -1,0 +1,28 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0     http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.6.xsd"
+	 xmlns:xlink="http://www.w3.org/1999/xlink"
+	 name="{{ catalog_name }}">
+
+  <service base="" name="all" serviceType="compound">
+    <service base="/thredds/dodsC/" name="odap" serviceType="OpenDAP" />
+    <service base="/thredds/dap4/" name="dap4" serviceType="DAP4" />
+    <service base="/thredds/ncss/grid/" name="ncssGrid" serviceType="NetcdfSubset" />
+    <service base="/thredds/ncss/point/" name="ncssPoint" serviceType="NetcdfSubset" />
+    <service base="/thredds/cdmremote/" name="cdmremote" serviceType="CdmRemote" />
+    <service base="/thredds/cdmrfeature/grid/" name="cdmrFeature" serviceType="CdmrFeature" />
+    <service base="/thredds/iso/" name="iso" serviceType="ISO" />
+    <service base="/thredds/ncml/" name="ncml" serviceType="NCML" />
+    <service base="/thredds/uddc/" name="uddc" serviceType="UDDC" />
+  </service>
+
+  <datasetRoot location="{{ DATASET }}/ncmls" path="{{ path }}" />
+
+  <!-- Virtual dataset -->
+  <dataset name="{{ ncml }}" ID="{{ ncml }}" serviceName="all" urlPath="{{ path }}/{{ ncml }}.xml" />
+
+  <!-- Catalog ref to referenced datasets -->
+  {% for catalog in catalogs -%}
+  <catalogRef xlink:href="{{ catalog }}.xml" xlink:title="{{ catalog }}" name="" />
+  {% endfor %}
+</catalog>

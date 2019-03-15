@@ -4,6 +4,9 @@
 # python datasets.py --root $(pwd)/data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/historical --dest $(pwd) --name test.ncml
 # find $(pwd)/data -maxdepth 5 -mindepth 5 -type d | xargs -I{} -n1 python datasets.py --root {} --dest datasets/
 
+
+# python datasets.py --dataset /oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset --root data/cmip5/output1/NOAA-GFDL/GFDL-ESM2M/historical
+
 import sys, os
 import argparse
 import netCDF4
@@ -30,9 +33,10 @@ if __name__ == '__main__':
     # Arguments
     parser = argparse.ArgumentParser(description='Create ncml for files in directory.')
     parser.add_argument('--root', dest='root', type=str, help='Path containing files')
-    parser.add_argument('--name', dest='name', type=str, help='ncml filename')
-    parser.add_argument('--dest', dest='dest', type=str, help='Path to ncml')
+    parser.add_argument('--dataset', dest='DATASET', type=str, help='ZFS dataset path')
     args = parser.parse_args()
+
+    DATASET = args.DATASET
 
     # Jinja
     env = Environment(loader=FileSystemLoader('.'), autoescape=select_autoescape(['xml']))
@@ -40,55 +44,39 @@ if __name__ == '__main__':
     dataset_template = env.get_template('dataset.ncml.j2')
 
     # Generate aggregations
-    files = list(itertools.chain.from_iterable(get_files(args.root)))
+    datapath = os.path.join(DATASET, args.root)
+    files = list(itertools.chain.from_iterable(get_files(datapath)))
     files.sort()
     groups = []
     for k, g in itertools.groupby(files, lambda file: os.path.basename(file).split('_')[0:2]):
         groups.append((k, list(g))) # g is an iterator, we want a list
 
+    # Conventions:
+    # 1 - The parameter is the ZFS dataset path
+    # 2 - Every ZFS dataset contains the directories: data, ncmls, catalogs
+
     # Write ncml
-    if(args.name is None):
-        parts = args.root.split('/')[::-1][:5]
-        args.name = '-'.join(parts) + '.ncml'
+    parts = args.root.split('/')[::-1][:3]
+    ncml = '-'.join(parts)
 
-    if(args.dest is None):
-        args.dest = '/tmp'
-
-    with open(os.path.join(args.dest, args.name), 'w+') as fh:
+    with open(os.path.join(DATASET, 'ncmls', (ncml + '.xml')), 'w+') as fh:
         fh.write(dataset_template.render(groups=groups))
 
-    # Open the catalog and append the dataset
-    ET.register_namespace("", "http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0")
-    tree = ET.parse('catalog-template.xml')
-    root = tree.getroot()
-    dataset_root = root.find('{http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0}datasetRoot')
-
-    print(args.name)
-    nested_dataset = ET.SubElement(root, 'dataset')
-    nested_dataset.attrib = {
-        'name': args.name.split('.')[0],
-        'ID': args.name.split('.')[0],
-    }
-
-    access = ET.SubElement(nested_dataset, 'access')
-    access.attrib = {
-        'serviceName': 'virtual',
-        'urlPath': os.path.join(dataset_root.attrib['path'], 'datasets', args.name),
-        'dataFormat': 'NcML'
-    }
-
+    # Create catalogs for each (variable, realm) and keep catalogs name for later
+    catalogs = []
     for variable, files in groups:
-        path = os.path.join(dataset_root.attrib['path'], '-'.join(variable))
+        # Jinja template variables
+        catalog = ncml + '-' + '-'.join(variable)
+        location = os.path.dirname(files[0])
 
-        dataset = ET.SubElement(root, 'datasetScan')
-        dataset.attrib = {
-            'name': ' '.join(variable),
-            'path': '-'.join(variable),
-            'location': os.path.dirname(files[0])
-        }
+        catalogs.append(catalog)
+        template = env.get_template('catalog-var-agg.xml.j2')
 
-        filter = ET.SubElement(dataset, 'filter')
-        filter_include = ET.SubElement(filter, 'include')
-        filter_include.attrib = { 'wildcard': '_'.join(variable) + '*' }
+        with open(os.path.join(DATASET, 'catalogs', (catalog + '.xml')), 'w+') as fh:
+            fh.write(template.render(name=catalog,location=location,path=catalog,variable=variable, files=files))
 
-    tree.write('catalog.xml')
+    # Create catalog for virtual dataset
+    template = env.get_template('catalog-dataset.xml.j2')
+
+    with open(os.path.join(DATASET, 'catalogs', (ncml + '.xml')), 'w+') as fh:
+        fh.write(template.render(DATASET=DATASET,ncml=ncml,path=os.path.basename(DATASET),catalog_name=ncml,catalogs=catalogs))
