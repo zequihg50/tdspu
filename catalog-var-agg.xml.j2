@@ -22,7 +22,7 @@
 
   <dataset name="{{ name }}" ID="{{ name }}">
     {% for file in files -%}
-    <dataset name="{{ file|replace(location, '') }}"
+    <dataset name="{{ file|replace(location + '/', '') }}"
 	     ID="{{ file|replace(location, '') }}"
 	     serviceName="all"
 	     urlPath="{{ file|replace(location, path) }}" />

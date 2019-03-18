@@ -23,6 +23,6 @@
 
   <!-- Catalog ref to referenced datasets -->
   {% for catalog in catalogs -%}
-  <catalogRef xlink:href="{{ catalog }}.xml" xlink:title="{{ catalog }}" name="" />
+  <catalogRef xlink:href="{{ catalog }}.xml" xlink:title="{{ catalog.split('-')[5:]|join(' ') }}" name="" />
   {% endfor %}
 </catalog>
