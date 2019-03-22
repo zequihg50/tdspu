@@ -1,0 +1,11 @@
+Conventions:
+  - The parameter is the ZFS dataset path
+  - Every ZFS dataset contains the directories: data, ncmls, catalogs
+
+NcML generation:
+
+for d in $( find /oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset/data -maxdepth 5 -mindepth 5 -type d ); do find $d -type f | python ncml.py --dataset "/oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset/"; done
+
+Catalog generation:
+
+python catalog.py --dataset /oceano/gmeteo/WORK/zequi/DATASETS/cmip5-esm-subset
