@@ -38,6 +38,6 @@
   </datasetScan>
   <!-- Virtual datasets -->
   {% for ncml in ncmls -%}
-  <dataset name="{{ ncml }}" ID="{{ ncml }}" serviceName="virtual" urlPath="{{ name }}/{{ ncml }}.ncml" />
+  <dataset name="{{ ncml.split('_')[2:]|join(' ') }}" ID="{{ ncml }}" serviceName="virtual" urlPath="{{ name }}/{{ ncml }}.ncml" />
   {% endfor %}
 </catalog>

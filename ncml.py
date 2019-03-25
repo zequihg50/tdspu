@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     # Generate ncml
     root = os.path.join(args.dataset, 'data')
-    ncml = '-'.join(files[0].replace(root, '')[1:].split('/')[:5])
+    ncml = '_'.join(files[0].replace(root, '')[1:].split('/')[:5])
     file = ncml + '.ncml'
 
     with open(os.path.join(args.dataset, 'ncmls', file), 'w+') as fh:
