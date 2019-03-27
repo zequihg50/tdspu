@@ -17,10 +17,10 @@ class NcmlGenerator(object):
         self.template = template
 
     def aggregate(self):
-        return self.files
+        raise NotImplementedError('aggregate() is not implemented in your ncml generator')
 
     def generate(self):
-        env = Environment(loader=FileSystemLoader('.'), autoescape=select_autoescape(['xml']))
+        env = Environment(loader=FileSystemLoader(os.path.dirname(__file__)), autoescape=select_autoescape(['xml']))
         env.globals['ncoords'] = self.ncoords
         template = env.get_template(self.template)
         params = { 'aggregations': self.aggregate() }
@@ -36,8 +36,8 @@ class NcmlGenerator(object):
         return size
 
 class EsgfNcmlGenerator(NcmlGenerator):
-    def __init__(self):
-        super().__init__(files, 'esgf.ncml.j2')
+    def __init__(self, files, template='esgf.ncml.j2'):
+        super().__init__(files, template)
 
     def aggregate(self):
         aggregations = []
@@ -50,17 +50,10 @@ class EsgfNcmlGenerator(NcmlGenerator):
 if __name__ == '__main__':
     # Arguments
     parser = argparse.ArgumentParser(description='Create ncml for files in directory.')
-    parser.add_argument('--dataset', dest='dataset', type=str, help='ZFS dataset path')
+    parser.add_argument('--generator', dest='generator', type=str, default='EsgfNcmlGenerator', help='NcML generator class')
     args = parser.parse_args()
 
     files =  sys.stdin.read().splitlines()
+    generator = locals()[args.generator](files)
 
-    # Generate ncml
-    root = os.path.join(args.dataset, 'data')
-    ncml = '_'.join(files[0].replace(root, '')[1:].split('/')[:5])
-    file = ncml + '.ncml'
-
-    generator = EsgfNcmlGenerator()
-
-    with open(os.path.join(args.dataset, 'ncmls', file), 'w+') as fh:
-        fh.write(generator.generate())
+    print(generator.generate())
