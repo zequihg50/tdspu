@@ -6,7 +6,8 @@ import argparse
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 def generate(template, **kwargs):
-    env = Environment(loader=FileSystemLoader(os.path.dirname(__file__)), autoescape=select_autoescape(['xml']))
+    templates = os.path.join(os.path.dirname(__file__), 'data')
+    env = Environment(loader=FileSystemLoader(templates), autoescape=select_autoescape(['xml']))
     template = env.get_template(template)
 
     return template.render(**kwargs)
@@ -21,7 +22,7 @@ def esgf_parameters(name, ncml_location, data_location):
         'ncmls': ncmls
     }
 
-if __name__ == '__main__':
+def main():
     # Arguments, change this for multiple '-p data=whatever -p ncmls=whatever'
     parser = argparse.ArgumentParser(description='Create ncml for files in directory.')
     parser.add_argument('--template', dest='template', type=str, default='catalog.xml.j2', help='Template file')

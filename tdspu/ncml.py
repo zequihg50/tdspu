@@ -20,7 +20,8 @@ class NcmlGenerator(object):
         raise NotImplementedError('aggregate() is not implemented in your ncml generator')
 
     def generate(self):
-        env = Environment(loader=FileSystemLoader(os.path.dirname(__file__)), autoescape=select_autoescape(['xml']))
+        templates = os.path.join(os.path.dirname(__file__), 'data')
+        env = Environment(loader=FileSystemLoader(templates), autoescape=select_autoescape(['xml']))
         env.globals['ncoords'] = self.ncoords
         template = env.get_template(self.template)
         params = { 'aggregations': self.aggregate() }
@@ -47,13 +48,12 @@ class EsgfNcmlGenerator(NcmlGenerator):
 
         return aggregations
 
-if __name__ == '__main__':
-    # Arguments
+def main():
     parser = argparse.ArgumentParser(description='Create ncml for files in directory.')
     parser.add_argument('--generator', dest='generator', type=str, default='EsgfNcmlGenerator', help='NcML generator class')
     args = parser.parse_args()
 
     files =  sys.stdin.read().splitlines()
-    generator = locals()[args.generator](files)
+    generator = globals()[args.generator](files)
 
     print(generator.generate())
