@@ -1,0 +1,53 @@
+#!/bin/bash
+
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+    case $key in
+	--ncmls)
+	    ncmls="$2"
+	    shift
+	    shift
+	    ;;
+	--files)
+	    files="$2"
+	    shift
+	    shift
+	    ;;
+	--aggregation)
+	    aggregation="$2"
+	    shift;
+	    shift;
+	    ;;
+	*)
+	    root="$1"
+	    shift
+	    ;;
+    esac
+done
+
+find ${files:-$root} -type f | awk -v root="$root" '
+BEGIN{
+  # Header
+  print "project,product,model,experiment,ensemble,table,variable,file"
+}
+{
+  drs=$0
+  sub(root,"",drs)
+  n=split(drs, facets, "/")
+  project="cmip5"
+  product="output1"
+  institute=facets[3]
+  frequency=facets[6]
+  filename=facets[11]
+
+  sub(".nc","",filename) # Remove extension
+  split(filename, fparts, "_")
+  variable=fparts[1]
+  table=fparts[2]
+  model=fparts[3]
+  experiment=fparts[4]
+  ensemble=fparts[5]
+
+  print project","product","model","experiment","ensemble","table","variable","$0
+}' | ncml --root "$root" --ncmls "$ncmls" --aggregation="${aggregation:-project,product,model,experiment,table}"

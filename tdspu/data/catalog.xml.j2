@@ -39,8 +39,8 @@
 
   <!-- Virtual datasets -->
   <dataset name="{{ name|replace('-', '_') }}_Virtual_Datasets" ID="{{ name }}">
-    {% for ncml in ncmls -%}
-    <dataset name="{{ ncml.split('-')[2:]|join('_')|replace('.ncml', '') }}" ID="{{ ncml|replace('.ncml', '') }}" serviceName="virtual" urlPath="{{ name }}/{{ ncml }}" />
+    {% for ncml in ncmls|sort -%}
+    <dataset name="{{ ncml.split('_')[2:]|join('_')|replace('.ncml', '') }}" ID="{{ ncml|replace('.ncml', '') }}" serviceName="virtual" urlPath="{{ name }}/{{ ncml }}" />
     {% endfor %}
   </dataset>
 </catalog>
