@@ -1,0 +1,55 @@
+#!/bin/bash
+
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+    case $key in
+	--files) # directory containing .nc, defaults to root (useful with parallel)
+	    files="$2"
+	    shift
+	    shift
+	    ;;
+	--project) # cmip5, cordex
+	    project="$2"
+	    shift
+	    shift
+	    ;;
+	*)
+	    root="$1"
+	    shift
+	    ;;
+    esac
+done
+
+tocsv_cmip5() {
+  awk -v root="$1" '
+  BEGIN{
+    # Header
+    print "project,product,model,experiment,ensemble,table,variable,file"
+  }
+  {
+    drs=$0
+    sub(root,"",drs)
+    n=split(drs, facets, "/")
+    project="cmip5"
+    product=facets[2]
+    institute=facets[3]
+    frequency=facets[6]
+
+    # filename is always the last facet
+    # in cmip5 sometimes variable is in the DRS and sometimes its not, why?
+    filename=facets[n]
+
+    sub(".nc","",filename) # Remove extension
+    split(filename, fparts, "_")
+    variable=fparts[1]
+    table=fparts[2]
+    model=fparts[3]
+    experiment=fparts[4]
+    ensemble=fparts[5]
+
+    print project","product","model","experiment","ensemble","table","variable","$0
+  }'
+}
+
+find ${files:-$root} -type f | tocsv_${project} $root

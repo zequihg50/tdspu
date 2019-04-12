@@ -35,9 +35,8 @@ def template(template, files, aggregator=aggregate):
 def main():
     parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
     parser.add_argument('--ncmls', dest='ncmls', type=str, help='Dest directory for NcML files')
-    parser.add_argument('--root', dest='root', type=str, help='Directory to scan for netCDF files')
     parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
-    parser.add_argument('--aggregation', dest='aggregation', type=str, help='Aggregation spec. Comma separated facets, e.g "project,product,model"')
+    parser.add_argument('--aggregation', dest='aggregation', type=str, default='project,product,model,experiment,ensemble,table', help='Aggregation spec. Comma separated facets, e.g "project,product,model"')
     args = parser.parse_args()
 
     df = pd.read_csv(sys.stdin)

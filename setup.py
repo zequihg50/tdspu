@@ -2,13 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name="tdspu", # THREDDS Data Server Publication Utils
-    version="0.15",
+    version="0.16",
     packages=find_packages(),
     include_package_data=True,
     python_requires='>=3',
     install_requires=['netCDF4', 'Jinja2', 'pandas'],
 
-    scripts=['tdspu/ncmlify'],
+    scripts=['tdspu/ncmlify', 'tdspu/csvify'],
     entry_points = {
         "console_scripts": [
             "ncml = tdspu.ncml:main",
