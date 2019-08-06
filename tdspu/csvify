@@ -52,4 +52,30 @@ tocsv_cmip5() {
   }'
 }
 
+tocsv_cmip6() {
+  awk -v root="$1" '
+  BEGIN {
+    # Header
+    print "project,activity_id,institution_id,source_id,experiment_id,variant_label,table_id,variable_id,grid_label,version,file"
+  }
+  {
+    drs=$0
+    sub(root,"",drs)
+    n=split(drs,facets,"/")
+    project="cmip6"
+    activity_id=facets[3]
+    institution_id=facets[4]
+    source_id=facets[5]
+    experiment_id=facets[6]
+    variant_label=facets[7]
+    table_id=facets[8]
+    variable_id=facets[9]
+    grid_label=facets[10]
+    version=facets[11]
+    filename=facets[n]
+
+    print project","activity_id","institution_id","source_id","experiment_id","variant_label","table_id","variable_id","grid_label","version","$0
+  }'
+}
+
 find ${files:-$root} -type f | tocsv_${project} $root

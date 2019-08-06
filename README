@@ -13,3 +13,10 @@ conda build tdspu
 
 Conventions:
   - Every ZFS dataset contains the directories: data, ncmls
+
+Examples CMIP6:
+
+```bash
+#csvify --project cmip6 $(pwd)/data | head
+ncmlify --project cmip6 --root $(pwd)/data --ncmls ncmls --aggregation 'project,activity_id,institution_id,source_id,experiment_id,variant_label,table_id,grid_label,version'
+```
