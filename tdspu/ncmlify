@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Usage: ncmlify --project PROJECT --root ROOT [ncmlifyParameters]
+# find eg: find data -type f -regextype egrep \( -regex '.*_fx_.*' -o -regex '.*_Amon_.*' \)
+
 project="$2"
 root="$4"
 shift 4
 
-csvify --project "$project" "$root" | ncml $@
+cat /dev/stdin | csvify --project "$project" "$root" | ncml $@

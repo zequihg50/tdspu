@@ -1,15 +1,12 @@
 #!/bin/bash
 
+# Usage: csvify --project PROJECT ROOT
+
 while [[ $# -gt 0 ]]
 do
     key="$1"
     case $key in
-	--files) # directory containing .nc, defaults to root (useful with parallel)
-	    files="$2"
-	    shift
-	    shift
-	    ;;
-	--project) # cmip5, cordex
+	--project) # cmip5, cmip6
 	    project="$2"
 	    shift
 	    shift
@@ -78,4 +75,4 @@ tocsv_cmip6() {
   }'
 }
 
-find ${files:-$root} -type f | tocsv_${project} $root
+cat /dev/stdin | tocsv_${project} $root
