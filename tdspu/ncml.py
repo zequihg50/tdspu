@@ -37,16 +37,30 @@ def main():
     parser.add_argument('--ncmls', dest='ncmls', type=str, help='Dest directory for NcML files')
     parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
     parser.add_argument('--aggregation', dest='aggregation', type=str, default='project,product,model,experiment,ensemble,table', help='Aggregation spec. Comma separated facets, e.g "project,product,model"')
+    parser.add_argument('--path-spec', dest='path_spec', type=str, default='', help='NcMLs file hierarchy e.g: experiment/frequency/ensemble')
+
     args = parser.parse_args()
 
     df = pd.read_csv(sys.stdin)
-    group = list(args.aggregation.split(','))
-    grouped = df.groupby(group)
+    group_spec = list(args.aggregation.split(','))
+    grouped = df.groupby(group_spec)
 
     template_file = args.template
     for name,group in grouped:
-        ncml_name = '_'.join(name) + '.ncml'
-        with open(os.path.join(args.ncmls, ncml_name), 'w+') as fh:
+        # create path according to path_spec
+        if args.path_spec != '':
+            path_spec = list(args.path_spec.split('/'))
+            indices = [i for i,x in enumerate(group_spec) if x in path_spec]
+            path_spec_values = [name[i] for i in indices]
+
+            path = os.path.join(args.ncmls, *path_spec_values)
+            os.makedirs(path, exist_ok=True)
+        else:
+            path = args.ncmls
+
+        # write the ncml
+        filename = '_'.join(name) + '.ncml'
+        with open(os.path.join(path, filename), 'w+') as fh:
             fh.write(template(template_file, group['file'].values))
 
 if __name__ == '__main__':

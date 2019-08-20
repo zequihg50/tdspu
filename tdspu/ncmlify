@@ -7,4 +7,4 @@ project="$2"
 root="$4"
 shift 4
 
-cat /dev/stdin | csvify --project "$project" "$root" | ncml $@
+< /dev/stdin csvify --project "$project" "$root" | ncml $@

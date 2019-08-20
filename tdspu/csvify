@@ -22,10 +22,10 @@ tocsv_cmip5() {
   awk -v root="$1" '
   BEGIN{
     # Header
-    print "project,product,model,experiment,ensemble,table,variable,file"
+    print "project,product,model,experiment,ensemble,table,variable,size,last_modification,file"
   }
   {
-    drs=$0
+    drs=$1
     sub(root,"",drs)
     n=split(drs, facets, "/")
     project="cmip5"
@@ -45,7 +45,7 @@ tocsv_cmip5() {
     experiment=fparts[4]
     ensemble=fparts[5]
 
-    print project","product","model","experiment","ensemble","table","variable","$0
+    print project","product","model","experiment","ensemble","table","variable","$2","$3","$1
   }'
 }
 
@@ -53,10 +53,10 @@ tocsv_cmip6() {
   awk -v root="$1" '
   BEGIN {
     # Header
-    print "project,activity_id,institution_id,source_id,experiment_id,variant_label,table_id,variable_id,grid_label,version,file"
+    print "project,activity_id,institution_id,source_id,experiment_id,variant_label,table_id,variable_id,grid_label,version,size,last_modification,file"
   }
   {
-    drs=$0
+    drs=$1
     sub(root,"",drs)
     n=split(drs,facets,"/")
     project="cmip6"
@@ -71,8 +71,8 @@ tocsv_cmip6() {
     version=facets[11]
     filename=facets[n]
 
-    print project","activity_id","institution_id","source_id","experiment_id","variant_label","table_id","variable_id","grid_label","version","$0
+    print project","activity_id","institution_id","source_id","experiment_id","variant_label","table_id","variable_id","grid_label","version","$2","$3","$1
   }'
 }
 
-cat /dev/stdin | tocsv_${project} $root
+< /dev/stdin xargs stat -c '%n %s %Y' | tocsv_${project} $root
