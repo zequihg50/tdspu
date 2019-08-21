@@ -16,7 +16,7 @@ def aggregate(files):
 
     return aggregations
 
-def template(template, files, aggregator=aggregate):
+def template(template, files, size, aggregator=aggregate):
     def ncoords(file, dimension):
         dataset = netCDF4.Dataset(file)
         size = dataset.dimensions[dimension].size
@@ -28,7 +28,9 @@ def template(template, files, aggregator=aggregate):
     env = Environment(loader=FileSystemLoader(templates), autoescape=select_autoescape(['xml']))
     env.globals['ncoords'] = ncoords
     template = env.get_template(template)
-    params = { 'aggregations': aggregator(files) }
+    params = { 'aggregations': aggregator(files),
+               'size': size
+    }
 
     return template.render(**params)
 
@@ -60,8 +62,9 @@ def main():
 
         # write the ncml
         filename = '_'.join(name) + '.ncml'
+        size = group['size'].sum()
         with open(os.path.join(path, filename), 'w+') as fh:
-            fh.write(template(template_file, group['file'].values))
+            fh.write(template(template_file, group['file'].values, size))
 
 if __name__ == '__main__':
     main()
