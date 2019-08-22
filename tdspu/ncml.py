@@ -39,7 +39,7 @@ def main():
     parser.add_argument('--ncmls', dest='ncmls', type=str, help='Dest directory for NcML files')
     parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
     parser.add_argument('--aggregation', dest='aggregation', type=str, default='project,product,model,experiment,ensemble,table', help='Aggregation spec. Comma separated facets, e.g "project,product,model"')
-    parser.add_argument('--path-spec', dest='path_spec', type=str, default='', help='NcMLs file hierarchy e.g: experiment/frequency/ensemble')
+    parser.add_argument('--path-spec', dest='path_spec', type=str, default='', help='NcMLs file hierarchy e.g: aLiteral/{frequency}/{ensemble}')
 
     args = parser.parse_args()
 
@@ -51,11 +51,10 @@ def main():
     for name,group in grouped:
         # create path according to path_spec
         if args.path_spec != '':
-            path_spec = list(args.path_spec.split('/'))
-            indices = [i for i,x in enumerate(group_spec) if x in path_spec]
-            path_spec_values = [name[i] for i in indices]
+            d = dict(zip(group_spec, name))
+            path_spec = list(args.path_spec.format(**d).split('/'))
 
-            path = os.path.join(args.ncmls, *path_spec_values)
+            path = os.path.join(args.ncmls, *path_spec)
             os.makedirs(path, exist_ok=True)
         else:
             path = args.ncmls
