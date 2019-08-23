@@ -36,10 +36,9 @@ def template(template, files, size, aggregator=aggregate):
 
 def main():
     parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
-    parser.add_argument('--ncmls', dest='ncmls', type=str, help='Dest directory for NcML files')
+    parser.add_argument('--dest', dest='dest', type=str, help='Dest directory for NcML files. Allows formatted strings.')
     parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
     parser.add_argument('--aggregation', dest='aggregation', type=str, default='project,product,model,experiment,ensemble,table', help='Aggregation spec. Comma separated facets, e.g "project,product,model"')
-    parser.add_argument('--path-spec', dest='path_spec', type=str, default='', help='NcMLs file hierarchy e.g: aLiteral/{frequency}/{ensemble}')
 
     args = parser.parse_args()
 
@@ -49,15 +48,10 @@ def main():
 
     template_file = args.template
     for name,group in grouped:
-        # create path according to path_spec
-        if args.path_spec != '':
-            d = dict(zip(group_spec, name))
-            path_spec = list(args.path_spec.format(**d).split('/'))
-
-            path = os.path.join(args.ncmls, *path_spec)
-            os.makedirs(path, exist_ok=True)
-        else:
-            path = args.ncmls
+        # create dest path, formatted string values come from group name
+        d = dict(zip(group_spec, name))
+        path = args.dest.format(**d)
+        os.makedirs(path, exist_ok=True)
 
         # write the ncml
         filename = '_'.join(name) + '.ncml'
