@@ -5,18 +5,19 @@ import argparse
 import pandas as pd
 
 # ncml
-import netCDF4, itertools
+import netCDF4
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-def aggregate(files):
+def aggregate(group):
     aggregations = []
-    files.sort() # itertools.groupby requires order
-    for _, g in itertools.groupby(files, lambda file: os.path.basename(file).split('_')[0:2]):
-        aggregations.append(list(g)) # g is an iterator, we want a list
+    grouped = group.groupby(['variable_id', 'table_id'])
+
+    for name,aggregation in grouped:
+        aggregations.append(sorted(list(aggregation['file'])))
 
     return aggregations
 
-def template(template, files, size, aggregator=aggregate):
+def template(template, **kwargs):
     def ncoords(file, dimension):
         dataset = netCDF4.Dataset(file)
         size = dataset.dimensions[dimension].size
@@ -28,11 +29,8 @@ def template(template, files, size, aggregator=aggregate):
     env = Environment(loader=FileSystemLoader(templates), autoescape=select_autoescape(['xml']))
     env.globals['ncoords'] = ncoords
     template = env.get_template(template)
-    params = { 'aggregations': aggregator(files),
-               'size': size
-    }
 
-    return template.render(**params)
+    return template.render(**kwargs)
 
 def main():
     parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
@@ -57,7 +55,11 @@ def main():
         filename = '_'.join(name) + '.ncml'
         size = group['size'].sum()
         with open(os.path.join(path, filename), 'w+') as fh:
-            fh.write(template(template_file, group['file'].values, size))
+            params = { 'aggregations': aggregate(group),
+                       'size': size
+            }
+
+            fh.write(template(template_file, **params))
 
 if __name__ == '__main__':
     main()
