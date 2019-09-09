@@ -17,5 +17,5 @@ Conventions:
 Examples CMIP6:
 
 ```bash
-find data -type f -regextype egrep \( -regex '.*_fx_.*' -o -regex '.*_Amon_.*' \) | ncmlify --project cmip6 --root $(pwd)/data --ncmls ncmls2 --aggregation 'project,activity_id,institution_id,source_id,experiment_id,variant_label,grid_label'
+find $(pwd)/data -type f | ncmlify --project cmip6 --root $(pwd)/data --dest ncmls2/{source_id}/{experiment_id}/{table_id} --group-spec 'project,activity_id,institution_id,source_id,experiment_id,variant_label,grid_label,table_id'
 ```

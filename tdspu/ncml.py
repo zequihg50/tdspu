@@ -34,28 +34,44 @@ def template(template, **kwargs):
 
 def main():
     parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
-    parser.add_argument('--dest', dest='dest', type=str, help='Dest directory for NcML files. Allows formatted strings.')
+    parser.add_argument('--filename', dest='filename', type=str, default='',
+        help='Template for NcML filenames using formatted strings. E.g. {project}_{product}_{model}_day.ncml')
+    parser.add_argument('--dest', dest='dest', type=str,
+        help='Template for destination directory of NcML files using formatted strings.')
     parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
-    parser.add_argument('--aggregation', dest='aggregation', type=str, default='project,product,model,experiment,ensemble,table', help='Aggregation spec. Comma separated facets, e.g "project,product,model"')
-
+    parser.add_argument('--group-spec', dest='group_spec', type=str,
+        default='project,activity_id,institution_id,source_id,experiment_id,variant_label,grid_label,table_id',
+        help='Comma separated facet names, e.g "project,product,model"')
     args = parser.parse_args()
 
     df = pd.read_csv(sys.stdin)
-    group_spec = list(args.aggregation.split(','))
-    grouped = df.groupby(group_spec)
+    group_spec = list(args.group_spec.split(','))
+    grouped = df[df.table_id != 'fx'].groupby(group_spec)
 
     template_file = args.template
+    # each group is a ncml file and
+    # each group contains the netCDF files that belong to that ncml file
     for name,group in grouped:
         # create dest path, formatted string values come from group name
         d = dict(zip(group_spec, name))
         path = args.dest.format(**d)
         os.makedirs(path, exist_ok=True)
 
-        # write the ncml
-        filename = '_'.join(name) + '.ncml'
+        # ncml filename
+        if args.filename == '':
+            filename = '_'.join(name) + '.ncml'
+        else:
+            filename = args.filename.format(**d)
+
         size = group['size'].sum()
         with open(os.path.join(path, filename), 'w+') as fh:
+            # https://stackoverflow.com/questions/34157811/filter-a-pandas-dataframe-using-values-from-a-dict
+            df_fx = df[df.table_id == 'fx']
+            df_fx.loc[:, 'table_id'] = d['table_id']
+            fxs = df_fx.loc[(df_fx[list(d)] == pd.Series(d)).all(axis=1)].file
+
             params = { 'aggregations': aggregate(group),
+                       'fxs': list(fxs),
                        'size': size
             }
 

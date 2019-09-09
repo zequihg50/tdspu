@@ -17,5 +17,9 @@
     <netcdf location="{{ aggregation|first }}" />
     {% endif %}
     {% endfor %}
+
+    {% for fx in fxs -%}
+    <netcdf location="{{ fx }}" />
+    {% endfor %}
   </aggregation>
 </netcdf>
