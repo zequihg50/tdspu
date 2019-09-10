@@ -13,7 +13,11 @@ def generate(template, **kwargs):
     return template.render(**kwargs)
 
 def esgf_parameters(name, ncml_location, data_location):
-    ncmls = os.listdir(ncml_location)
+    ncmls = []
+    for dirpath, dirnames, filenames in os.walk(ncml_location):
+        abs_paths = [os.path.join(dirpath, f) for f in filenames]
+        rel_paths = [p.replace(ncml_location, '').lstrip('/') for p in abs_paths]
+        ncmls.extend(rel_paths)
 
     return {
         'name': name,
