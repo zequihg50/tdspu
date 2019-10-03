@@ -8,9 +8,9 @@ import pandas as pd
 import netCDF4
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-def aggregate(group):
+def aggregate(group, group_spec):
     aggregations = []
-    grouped = group.groupby(['variable_id', 'table_id'])
+    grouped = group.groupby(group_spec)
 
     for name,aggregation in grouped:
         aggregations.append(sorted(list(aggregation['file'])))
@@ -40,11 +40,20 @@ def main():
         help='Template for destination directory of NcML files using formatted strings.')
     parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
     parser.add_argument('--group-spec', dest='group_spec', type=str,
-        default='project,activity_id,institution_id,source_id,experiment_id,variant_label,grid_label,table_id',
         help='Comma separated facet names, e.g "project,product,model"')
     args = parser.parse_args()
 
     df = pd.read_csv(sys.stdin)
+
+    if args.group_spec is None:
+        with open(args.filename, 'w+') as fh:
+            params = { 'aggregations': aggregate(df, ['variable_id']),
+                       'size': df['size'].sum()
+            }
+
+            fh.write(template('esgf.ncml.j2', **params))
+            sys.exit(0)
+
     group_spec = list(args.group_spec.split(','))
     grouped = df[df.table_id != 'fx'].groupby(group_spec)
 
@@ -70,7 +79,7 @@ def main():
             df_fx.loc[:, 'table_id'] = d['table_id']
             fxs = df_fx.loc[(df_fx[list(d)] == pd.Series(d)).all(axis=1)].file
 
-            params = { 'aggregations': aggregate(group),
+            params = { 'aggregations': aggregate(group, ['variable_id', 'table_id']),
                        'fxs': list(fxs),
                        'size': size
             }

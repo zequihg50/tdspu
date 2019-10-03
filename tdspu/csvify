@@ -75,4 +75,21 @@ tocsv_cmip6() {
   }'
 }
 
+tocsv_simple() {
+  awk -v root="$1" '
+  BEGIN {
+    # Header
+    print "variable_id,size,last_modification,file"
+  }
+  {
+    drs=$1
+    sub(root,"",drs)
+    n=split(drs,facets,"/")
+    variable_id=facets[6]
+    filename=facets[n]
+
+    print variable_id","$2","$3","$1
+  }'
+}
+
 < /dev/stdin xargs stat -c '%n %s %Y' | tocsv_${project} $root

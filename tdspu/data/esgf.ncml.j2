@@ -14,7 +14,7 @@
       </aggregation>
     </netcdf>
     {% elif aggregation|length == 1 -%}
-    <netcdf location="{{ aggregation|first }}" />
+    <netcdf location="{{ f }}" ncoords="{{ ncoords(f, 'time') }}" />
     {% endif %}
     {% endfor %}
 
