@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     python_requires='>=3',
-    install_requires=['netCDF4', 'Jinja2', 'pandas'],
+    install_requires=['netCDF4', 'Jinja2', 'pandas', 'cftime', 'argparse'],
 
     scripts=['tdspu/ncmlify', 'tdspu/csvify'],
     entry_points = {

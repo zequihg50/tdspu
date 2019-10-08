@@ -5,17 +5,19 @@
 
   <aggregation type="union">
     {% for aggregation in aggregations -%}
-    {% if aggregation|length > 1 -%}
+
     <netcdf>
+      <variable name="time" orgName="time">
+        <attribute name="units" value="{{ aggregation.time_units }}" />
+        <values start="{{ aggregation.time_start }}" increment="{{ aggregation.time_increment }}" />
+      </variable>
+      <dimension name="time" orgName="time" />
       <aggregation type="joinExisting" dimName="time">
-	{% for f in aggregation %}
+	{% for f in aggregation.files %}
 	<netcdf location="{{ f }}" ncoords="{{ ncoords(f, 'time') }}" />
 	{% endfor %}
       </aggregation>
     </netcdf>
-    {% elif aggregation|length == 1 -%}
-    <netcdf location="{{ f }}" ncoords="{{ ncoords(f, 'time') }}" />
-    {% endif %}
     {% endfor %}
 
     {% for fx in fxs -%}
