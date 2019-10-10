@@ -8,6 +8,8 @@ import pandas as pd
 import netCDF4, cftime
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+VARS_FX = ['areacella', 'areacellr', 'orog', 'sftlf', 'sftgif', 'mrsofc', 'rootd', 'zfull']
+
 def aggregate(group, group_spec):
 	aggregations = []
 	first_dates = []
@@ -35,7 +37,7 @@ def aggregation_data(file):
 				'time_increment': value1 - value0
 	}
 
-def template(template, **kwargs):
+def to_ncml(name, template, **kwargs):
 	def ncoords(file, dimension):
 		dataset = netCDF4.Dataset(file)
 		size = dataset.dimensions[dimension].size
@@ -46,27 +48,17 @@ def template(template, **kwargs):
 	templates = os.path.join(os.path.dirname(__file__), 'data')
 	env = Environment(loader=FileSystemLoader(templates), autoescape=select_autoescape(['xml']))
 	env.globals['ncoords'] = ncoords
-	template = env.get_template(template)
 
-	return template.render(**kwargs)
-
-def generate_ncml(df, template):
-	fxs = df[df.table_id == 'fx'].file
-	params = {	'aggregations': aggregate(df[df.table_id != 'fx'], ['variable_id', 'table_id']),
-				'fxs': list(fxs),
-				'size': df['size'].sum()
-	}
-
-	with open(args.filename, 'w+') as fh:
-		fh.write(template(args.template, **params))
+	t = env.get_template(template)
+	with open(name, 'w+') as fh:
+		fh.write(t.render(**kwargs))
 
 def main():
 	parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
-	parser.add_argument('--filename', dest='filename', type=str, default='', help='Template for NcML filenames using formatted strings. E.g. {project}_{product}_{model}_day.ncml')
-	parser.add_argument('--dest', dest='dest', type=str, help='Template for destination directory of NcML files using formatted strings.')
+	parser.add_argument('--dest', dest='dest', type=str, help='Full path to destination file using formatted strings.')
 	parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
 	parser.add_argument('--group-spec', dest='group_spec', type=str, help='Comma separated facet names, e.g "project,product,model"')
-
+	parser.add_argument('--aggregation-spec', dest='aggregation_spec', type=str, default='variable', help='Comma separated facet names.')
 	parser.add_argument('--drs', dest='drs', type=str, help='Directory Reference Syntax: e.g. project/product/model/...')
 	parser.add_argument('--root', dest='root', type=str, help='Directory substring before DRS')
 	args = parser.parse_args()
@@ -77,52 +69,44 @@ def main():
 		ncs = [os.path.join(dirpath, f) for f in filenames if f.endswith('.nc')]
 		files = pd.concat([files, pd.Series(ncs)])
 
-	# Files size and last modification date
-	sizes = pd.Series([os.stat(f).st_size for f in files], index=files.index)
-	mtimes = pd.Series([os.stat(f).st_mtime for f in files], index=files.index)
+	# Size and last modification date for all files
+	sizes = [os.stat(f).st_size for f in files]
+	mtimes = [os.stat(f).st_mtime for f in files]
 
 	drs = args.drs.split('/')
 	df = pd.DataFrame(	[os.path.dirname(os.path.relpath(f, args.root)).split('/') for f in files],
-						columns=drs,
-						index=files.index	)
+						columns=drs)
 
-	df['file'] = files
+	df['file'] = list(files)
 	df['size'] = sizes
 	df['mtime'] = mtimes
 
 	# df = pd.read_csv(sys.stdin)
 
 	if args.group_spec is None:
-		generate_ncml(df, args.template)
-	else:
-		group_spec = list(args.group_spec.split(','))
-		grouped = df[df.table_id != 'fx'].groupby(group_spec)
+		params = {	'aggregations': aggregate(df[~df.variable.isin(VARS_FX)], args.aggregation_spec),
+					'fxs': list( df[df.variable.isin(VARS_FX)].file ),
+					'size': df['size'].sum()
+		}
 
-		# each group is a ncml file and
-		# each group contains the netCDF files that belong to that ncml file
+		to_ncml(args.dest, args.template, **params)
+	else:
+		group_spec = args.group_spec.split(',')
+		grouped = df[~df.variable.isin(VARS_FX)].groupby(group_spec)
+
+		# each group contains .nc files for one .ncml
 		for name,group in grouped:
 			# create dest path, formatted string values come from group name
 			d = dict(zip(group_spec, name))
-			path = args.dest.format(**d)
-			os.makedirs(path, exist_ok=True)
+			dest = args.dest.format(**d)
 
-			# ncml filename
-			if args.filename == '':
-				filename = '_'.join(name) + '.ncml'
-			else:
-				filename = args.filename.format(**d)
-
-			# ncml size
-			size = group['size'].sum()
-
+			# get fx files for this group
 			# https://stackoverflow.com/questions/34157811/filter-a-pandas-dataframe-using-values-from-a-dict
-			df_fx = df[df.table_id == 'fx']
-			df_fx.loc[:, 'table_id'] = d['table_id']
-			fxs = df_fx.loc[(df_fx[list(d)] == pd.Series(d)).all(axis=1)].file
+			fxs = df[df.variable.isin(VARS_FX)].loc[(df[list(d)] == pd.Series(d)).all(axis=1)].file
 
 			#build aggregations
 			aggregations = []
-			lists = aggregate(group, ['variable_id', 'table_id'])
+			lists = aggregate(group, args.aggregation_spec)
 			for l in lists:
 				p = aggregation_data(l[0])
 				adic = { 'files': l }
@@ -131,11 +115,11 @@ def main():
 
 			params = {	'aggregations': aggregations,
 						'fxs': list(fxs),
-						'size': size
+						'size': group.size.sum() + fxs.size.sum()
 			}
 
-			with open(os.path.join(path, filename), 'w+') as fh:
-				fh.write(template(args.template, **params))
+			os.makedirs(os.path.dirname(dest), exist_ok=True)
+			to_ncml(dest, args.template, **params)
 
 if __name__ == '__main__':
 	main()
