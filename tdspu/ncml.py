@@ -50,28 +50,50 @@ def template(template, **kwargs):
 
 	return template.render(**kwargs)
 
+def generate_ncml(df, template):
+	fxs = df[df.table_id == 'fx'].file
+	params = {	'aggregations': aggregate(df[df.table_id != 'fx'], ['variable_id', 'table_id']),
+				'fxs': list(fxs),
+				'size': df['size'].sum()
+	}
+
+	with open(args.filename, 'w+') as fh:
+		fh.write(template(args.template, **params))
+
 def main():
 	parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
-	parser.add_argument('--filename', dest='filename', type=str, default='',
-		help='Template for NcML filenames using formatted strings. E.g. {project}_{product}_{model}_day.ncml')
-	parser.add_argument('--dest', dest='dest', type=str,
-		help='Template for destination directory of NcML files using formatted strings.')
+	parser.add_argument('--filename', dest='filename', type=str, default='', help='Template for NcML filenames using formatted strings. E.g. {project}_{product}_{model}_day.ncml')
+	parser.add_argument('--dest', dest='dest', type=str, help='Template for destination directory of NcML files using formatted strings.')
 	parser.add_argument('--template', dest='template', type=str, default='esgf.ncml.j2', help='Template file')
-	parser.add_argument('--group-spec', dest='group_spec', type=str,
-		help='Comma separated facet names, e.g "project,product,model"')
+	parser.add_argument('--group-spec', dest='group_spec', type=str, help='Comma separated facet names, e.g "project,product,model"')
+
+	parser.add_argument('--drs', dest='drs', type=str, help='Directory Reference Syntax: e.g. project/product/model/...')
+	parser.add_argument('--root', dest='root', type=str, help='Directory substring before DRS')
 	args = parser.parse_args()
 
-	df = pd.read_csv(sys.stdin)
+	# Get all files
+	files = pd.Series(dtype=str)
+	for dirpath, dirnames, filenames in os.walk(args.root):
+		ncs = [os.path.join(dirpath, f) for f in filenames if f.endswith('.nc')]
+		files = pd.concat([files, pd.Series(ncs)])
+
+	# Files size and last modification date
+	sizes = pd.Series([os.stat(f).st_size for f in files], index=files.index)
+	mtimes = pd.Series([os.stat(f).st_mtime for f in files], index=files.index)
+
+	drs = args.drs.split('/')
+	df = pd.DataFrame(	[os.path.dirname(os.path.relpath(f, args.root)).split('/') for f in files],
+						columns=drs,
+						index=files.index	)
+
+	df['file'] = files
+	df['size'] = sizes
+	df['mtime'] = mtimes
+
+	# df = pd.read_csv(sys.stdin)
 
 	if args.group_spec is None:
-		fxs = df[df.table_id == 'fx'].file
-		params = { 'aggregations': aggregate(df, ['variable_id']),
-				   'fxs': list(fxs),
-				   'size': df['size'].sum()
-		}
-
-		with open(args.filename, 'w+') as fh:
-			fh.write(template(args.template, **params))
+		generate_ncml(df, args.template)
 	else:
 		group_spec = list(args.group_spec.split(','))
 		grouped = df[df.table_id != 'fx'].groupby(group_spec)
@@ -107,9 +129,9 @@ def main():
 				adic.update(p)
 				aggregations.append(adic)
 
-			params = { 'aggregations': aggregations,
-					   'fxs': list(fxs),
-					   'size': size
+			params = {	'aggregations': aggregations,
+						'fxs': list(fxs),
+						'size': size
 			}
 
 			with open(os.path.join(path, filename), 'w+') as fh:

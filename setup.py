@@ -8,7 +8,6 @@ setup(
     python_requires='>=3',
     install_requires=['netCDF4', 'Jinja2', 'pandas', 'cftime', 'argparse'],
 
-    scripts=['tdspu/ncmlify', 'tdspu/csvify'],
     entry_points = {
         "console_scripts": [
             "ncml = tdspu.ncml:main",
