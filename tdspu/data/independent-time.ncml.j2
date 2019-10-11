@@ -4,22 +4,18 @@
   <attribute name="size_human" value="{{ size|filesizeformat }}" />
 
   <aggregation type="union">
-    {% for aggregation in aggregations -%}
-
+  	{% for name,aggregation in aggregations -%}
     <netcdf>
       <variable name="time" orgName="time">
-        <attribute name="units" value="{{ aggregation.time_units }}" />
-        <values start="{{ aggregation.time_start }}" increment="{{ aggregation.time_increment }}" />
+        <attribute name="units" value="{{ aggregation.iloc[0].time_units }}" />
+        <values start="{{ aggregation.iloc[0].time_start }}" increment="{{ aggregation.iloc[0].time_increment }}" />
       </variable>
-      <dimension name="time" orgName="time" />
       <aggregation type="joinExisting" dimName="time">
-	{% for f in aggregation.files %}
-	<netcdf location="{{ f }}" ncoords="{{ ncoords(f, 'time') }}" />
-	{% endfor %}
+	  {% for t in aggregation[['time_ncoords']].itertuples() %}
+        <netcdf location="{{ t[0] }}" ncoords="{{ t[1] }}" />
+	  {% endfor %}
       </aggregation>
-    </netcdf>
-    {% endfor %}
-
+  	{% endfor %}
     {% for fx in fxs -%}
     <netcdf location="{{ fx }}" />
     {% endfor %}
