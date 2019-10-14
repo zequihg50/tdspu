@@ -54,7 +54,7 @@ def main():
 	# Get all files
 	files = []
 	if args.stdin:
-		files = sys.stdin.readlines()
+		files = sys.stdin.read().splitlines()
 	else:
 		for dirpath, dirnames, filenames in os.walk(args.root):
 			files.extend( [os.path.join(dirpath, f) for f in filenames if f.endswith('.nc')] )
@@ -65,7 +65,7 @@ def main():
 
 	df = pd.concat([df_facets, df_ncdata], axis=1)
 	df['size'] = [os.stat(f).st_size for f in files]
-	df['mtime'] = [os.stat(f).st_mtime for f in files]
+	#df['mtime'] = [os.stat(f).st_mtime for f in files]
 	df.index = pd.Index(files, name='file')
 
 	if args.group_spec is None:
@@ -86,6 +86,9 @@ def main():
 			dest = args.dest.format(**d)
 
 			# get fx files for this group
+			# because of r0i0p0 for cmip5 and cordex
+			d.pop('ensemble') # because of r0i0p0 for cmip5 and cordex
+			d.pop('frequency')
 			fxs = df[df.variable.isin(VARS_FX)].loc[(df[list(d)] == pd.Series(d)).all(axis=1)]
 
 			params = {	'aggregations': group.groupby(args.aggregation_spec),
