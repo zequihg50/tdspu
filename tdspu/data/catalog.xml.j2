@@ -33,14 +33,7 @@
 
   <datasetRoot location="{{ ncml_location }}" path="{{ name }}" />
 
-  <datasetScan name="{{ name|replace('-', '_') }}_Files" path="{{ name }}-files" location="{{ data_location }}" >
-    <serviceName>all</serviceName>
-  </datasetScan>
-
-  <!-- Virtual datasets -->
-  <dataset name="{{ name|replace('-', '_') }}_Virtual_Datasets" ID="{{ name }}">
-    {% for ncml in ncmls|sort -%}
-    <dataset name="{{ ncml.split('_')[2:]|join('_')|replace('.ncml', '') }}" ID="{{ ncml|replace('.ncml', '') }}" serviceName="virtual" urlPath="{{ name }}/{{ ncml }}" />
-    {% endfor %}
-  </dataset>
+  {% for ncml in ncmls|sort -%}
+  <dataset name="{{ ncml.split('/')|last|replace('.ncml', '') }}" ID="{{ ncml|replace('.ncml', '') }}" serviceName="virtual" urlPath="{{ name }}/{{ ncml }}" />
+  {% endfor %}
 </catalog>

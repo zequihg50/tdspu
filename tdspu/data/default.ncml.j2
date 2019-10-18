@@ -12,8 +12,8 @@
   	{% for name,aggregation in aggregations %}
     <netcdf>
       <aggregation type="joinExisting" dimName="time">
-	  {% for t in aggregation[['time_ncoords']].itertuples() %}
-        <netcdf location="{{ t[0] }}" ncoords="{{ t[1] }}" />
+	  {% for t in aggregation[['time_ncoords']].iterrows() %}
+        <netcdf location="{{ t[0] }}" ncoords="{{ t[1]|int }}" />
 	  {% endfor %}
       </aggregation>
     </netcdf>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os
+import os, sys
 import argparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -12,18 +12,13 @@ def generate(template, **kwargs):
 
 	return template.render(**kwargs)
 
-def esgf_parameters(name, ncml_location, data_location):
-	ncmls = []
-	for dirpath, dirnames, filenames in os.walk(ncml_location):
-		abs_paths = [os.path.join(dirpath, f) for f in filenames]
-		rel_paths = [p.replace(ncml_location, '').lstrip('/') for p in abs_paths]
-		ncmls.extend(rel_paths)
+def esgf_parameters(name, ncml_location, ncmls):
+	rel_paths = [f.replace(ncml_location, '').lstrip('/') for f in ncmls]
 
 	return {
 		'name': name,
 		'ncml_location': ncml_location,
-		'data_location': data_location,
-		'ncmls': ncmls
+		'ncmls': rel_paths
 	}
 
 def main():
@@ -32,10 +27,10 @@ def main():
 	parser.add_argument('--template', dest='template', type=str, default='catalog.xml.j2', help='Template file')
 	parser.add_argument('--name', dest='name', type=str, help='Catalog name')
 	parser.add_argument('--ncmls', dest='ncmls', type=str, help='Path to NcML files')
-	parser.add_argument('--data', dest='data', type=str, help='Root of datasetScan')
 	args = parser.parse_args()
 
-	params = esgf_parameters(args.name, args.ncmls, args.data)
+	ncmls = sys.stdin.read().splitlines()
+	params = esgf_parameters(args.name, args.ncmls, ncmls)
 	print(generate(args.template, **params))
 
 if __name__ == '__main__':

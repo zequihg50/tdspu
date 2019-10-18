@@ -40,8 +40,19 @@ def ncdata(file):
 				'time_increment': value1 - value0
 	}
 
+def filter_project_facets(project, d):
+	d.pop('frequency')
+	if project.lower() == 'cmip5':
+		d.pop('ensemble')
+
+	return d
+
+def aggregate(df, agg_spec):
+	return df.sort_index().groupby(agg_spec, sort=False)
+
 def main():
 	parser = argparse.ArgumentParser(description='Read a csv formatted table of facets and files and generate NcMLs')
+	parser.add_argument('--project', dest='project', type=str, help='CMIP5, CMIP6, CORDEX...')
 	parser.add_argument('--dest', dest='dest', type=str, help='Full path to destination file using formatted strings.')
 	parser.add_argument('--template', dest='template', type=str, default='default.ncml.j2', help='Template file')
 	parser.add_argument('--group-spec', dest='group_spec', type=str, help='Comma separated facet names, e.g "project,product,model"')
@@ -69,7 +80,7 @@ def main():
 	df.index = pd.Index(files, name='file')
 
 	if args.group_spec is None:
-		params = {	'aggregations': df[~df.variable.isin(VARS_FX)].groupby(args.aggregation_spec),
+		params = {	'aggregations': aggregate(df[~df.variable.isin(VARS_FX)], args.aggregation_spec),
 					'fxs': list( df[df.variable.isin(VARS_FX)].index ),
 					'size': df['size'].sum()
 		}
@@ -87,16 +98,17 @@ def main():
 
 			# get fx files for this group
 			# because of r0i0p0 for cmip5 and cordex
-			d.pop('ensemble') # because of r0i0p0 for cmip5 and cordex
-			d.pop('frequency')
+			d = filter_project_facets(args.project, d)
 			fxs = df[df.variable.isin(VARS_FX)].loc[(df[list(d)] == pd.Series(d)).all(axis=1)]
 
-			params = {	'aggregations': group.groupby(args.aggregation_spec),
+			aggregations = aggregate(group, args.aggregation_spec)
+
+			params = {	'aggregations': aggregations,
 						'fxs': list(fxs.index),
 						'size': group['size'].sum() + fxs['size'].sum(),
-						'time_units': group.iloc[0].time_units,
-						'time_start': group.iloc[0].time_start,
-						'time_increment': group.iloc[0].time_increment
+						'time_units': aggregations.first().iloc[0].time_units,
+						'time_start': aggregations.first().iloc[0].time_start,
+						'time_increment': aggregations.first().iloc[0].time_increment
 			}
 
 			os.makedirs(os.path.dirname(dest), exist_ok=True)
